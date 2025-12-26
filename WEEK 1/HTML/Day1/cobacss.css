@@ -1,0 +1,60 @@
+:root{
+    --space-sm:1rem
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body{
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.50rem;
+}
+
+header{
+    border-bottom: 1px solid #dcdbdbff;
+    padding: 16px;
+}
+
+nav{
+    justify-items: center;
+}
+
+nav ul{
+    display: flex;
+    gap: var(--space-sm);
+    list-style: none;
+    justify-items: center;
+}
+
+main{
+    margin: 0px;
+    max-width: 968px;
+    padding: 32px 16px;
+}
+
+section, article{
+    padding-top: var(--space-sm);
+}
+
+footer{
+    border-top: 1px solid #dcdbdbff;
+    justify-items: center;
+    padding: 16px
+}
+
+
+@media (min-width: 768px){
+    h1 {
+        font-size: 2.25rem;
+    }
+}
