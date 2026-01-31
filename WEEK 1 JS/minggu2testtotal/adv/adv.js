@@ -1,34 +1,30 @@
-let count = 0
+let activeTab = 0;
 
+const contents = [
+  "Ini Tab 1",
+  "Ini Tab 2",
+  "Ini Tab 3"
+];
 
-const minus = document.getElementById("min");
-const plus = document.getElementById("plus");
-const value = document.getElementById("value");
+const tab1 = document.getElementById("tab1");
+const tab2 = document.getElementById("tab2");
+const tab3 = document.getElementById("tab3");
+const content = document.getElementById("content");
 
-
-const render = () =>{
-    value.innerText = count;
-
-    if (count=== 0){
-        minus.disabled = true;
-    } else {
-        minus.disabled = false;
-    }
+function render(){
+    content.innerText = contents[activeTab];
 }
 
-render();
-
-
-minus.addEventListener("click", function(){
-   if(count > 0){
-
-       count--;
-       render();
-   }
+tab1.addEventListener("click", function(){
+    activeTab = 0;
+    render();
+    reset();
 })
-
-plus.addEventListener("click", function(){
-    count++;
+tab2.addEventListener("click", function(){
+    activeTab = 1;
     render();
 })
-
+tab3.addEventListener("click", function(){
+    activeTab = 2;
+    render();
+})
