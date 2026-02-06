@@ -21,7 +21,6 @@
 // //     list.innerHTML += `<li> ${item} </li>`
 // // })
 
-
 // const items = [
 //     {name: "Buku", price: 5000},
 //     {name: "Pulpen", price: 2000},
@@ -34,36 +33,73 @@
 // let isTotal = 0;
 
 // items.forEach(item =>{
-    //     list.innerHTML += `<li> ${item.name} - ${item.price}`
-    //     isTotal += item.price;
-    //     total.innerText = "Total: " + isTotal
-    
-    // })
-    
-    const list = document.getElementById("list");
-    const total = document.getElementById("total");
-const items = [
-    {name: "Buku", price: 5000},
-    {name: "Pulpen", price: 2000},
-    {name: "tipex", price: 3000},
-    {name: "hapus", price: 7000},
-]
+//     list.innerHTML += `<li> ${item.name} - ${item.price}`
+//     isTotal += item.price;
+//     total.innerText = "Total: " + isTotal
 
-list.innerHTML ="";
-let isTotal = 0;
-items.forEach(item => {
-    if (item.price > 3000){
+// })
+
+//     const list = document.getElementById("list");
+//     const total = document.getElementById("total");
+// const items = [
+//     {name: "Buku", price: 5000},
+//     {name: "Pulpen", price: 2000},
+//     {name: "tipex", price: 3000},
+//     {name: "hapus", price: 7000},
+// ]
+
+// list.innerHTML ="";
+// let isTotal = 0;
+// items.forEach(item => {
+//     if (item.price > 3000){
+
+//         let label = "";
+
+//         if(item.price > 6000){
+//             label = " (MAHAL)"
+//         }
+
+//         list.innerHTML += `<li>${item.name} - Rp. ${item.price.toLocaleString("id-ID")} ${label} </li>`;
+//         isTotal += item.price;
+//     }
+// })
+// total.innerText = "total " + isTotal.toLocaleString("id-ID");
+
+const list = document.getElementById("list");
+const totalEl = document.getElementById("total");
+let cart = [
+  { name: "Buku", price: 5000 },
+  { name: "Pulpen", price: 2000 },
+  { name: "tipex", price: 3000 },
+  { name: "hapus", price: 7000 },
+];
+
+function render() {
+  list.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+
+    total += item.price;
+
+    list.innerHTML += `
+      <li>
+        ${item.name} - ${item.price}
+        <button onclick="hapus(${index})">X</button>
+      </li>
+    `;
+  });
+
+  totalEl.innerText = total;
+}
+
+function hapus(index) {
+  // 1. hapus dari cart
+    cart.splice(index, 1);
 
 
-        let label = "";
+  // 2. render lagi
+  render();
+}
 
-        if(item.price > 6000){
-            label = " (MAHAL)"
-        }
-
-        list.innerHTML += `<li>${item.name} - Rp. ${item.price.toLocaleString("id-ID")} ${label} </li>`;
-        isTotal += item.price;
-    }
-})
-total.innerText = "total " + isTotal.toLocaleString("id-ID");
-
+render();
