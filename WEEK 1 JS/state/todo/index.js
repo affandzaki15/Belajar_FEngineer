@@ -65,6 +65,11 @@ function render() {
 function hapus(index) {
   players.splice(index, 1);
 
+  
+  modeEdit = false;
+  input.value = "";
+  indexEdit = null;
+  add.innerText = "Tambah";
   simpan();
   render();
 }
