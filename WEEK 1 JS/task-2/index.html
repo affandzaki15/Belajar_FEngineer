@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font langsung -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+
+
+<body class="font-poppins">
+
+    <!-- Input Task -->
+    <section class="m-10 md:m-10 max-w-full font-poppins">
+        <h1 class="text-3xl font-bold font-poppins">
+            Taxskuy.
+        </h1>
+        <div>
+            <form class="flex items-center gap-2 mt-2">
+
+                <input type="text" placeholder="Input Task"
+                    class="border border-gray-300 px-3 py-2 rounded-md flex-1 min-w-0 focus:ring-2 focus:ring-orange-500 outline-none">
+
+                <div class="relative inline-block text-left">
+                    <button type="button"
+                        class="px-2 md:px-4 py-2 rounded-md border bg-white whitespace-nowrap text-sm">
+                        Prioritas >
+                    </button>
+                </div>
+
+                <button type="submit"
+                    class="bg-orange-600 text-white px-4 py-2 rounded-md whitespace-nowrap text-sm font-medium">
+                    Add Task
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- filter -->
+
+    <section class="m-10 font-poppins">
+        <h1 class="font-bold text-xl pb-3"> Filter</h1>
+        <nav class="flex gap-1">
+            <a href="#" class="px-4 py-2 bg-orange-600 text-white rounded-full text-sm">All</a>
+            <a href="#" class="px-4 py-2 bg-orange-600 text-white rounded-full text-sm">Active</a>
+            <a href="#" class="px-4 py-2 bg-orange-600 text-white rounded-full text-sm">Done</a>
+        </nav>
+    </section>
+
+    <!-- stats -->
+    <section class="m-10">
+        <h1 class="font-bold text-xl pb-2">Stats :</h1>
+        <div class="flex gap-3">
+
+            <p id="total">0 Total</p>
+            <p id="active">0 Active</p>
+            <p id="done">0 Done</p>
+        </div>
+    </section>
+
+</body>
+
+</html>
